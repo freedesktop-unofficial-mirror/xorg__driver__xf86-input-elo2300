@@ -102,7 +102,11 @@ static const char *default_options[] =
 	"FlowControl", "None"
 };
 
-XF86ModuleData elo2300ModuleData = { &VersionRec, SetupProc, TearDownProc };
+_X_EXPORT XF86ModuleData elo2300ModuleData = {
+    &VersionRec,
+    SetupProc,
+    TearDownProc
+};
 
 /*****************************************************************************
  *	Function Definitions
