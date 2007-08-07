@@ -183,8 +183,6 @@ SetupProc(	pointer module,
 	priv->buffer = XisbNew (local->fd, 200);
 	priv->button_down = FALSE;
 
-	DBG (9, XisbTrace (priv->buffer, 1));
-
 	EloNewPacket (priv);
 	if (QueryHardware (priv, errmaj, errmin) != Success)
 	{
