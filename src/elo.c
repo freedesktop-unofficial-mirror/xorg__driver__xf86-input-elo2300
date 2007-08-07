@@ -455,7 +455,7 @@ static int
 ControlProc( LocalDevicePtr local,
 			 xDeviceCtl * control )
 {
-	xDeviceTSCalibrationCtl *c = (xDeviceTSCalibrationCtl *) control;
+	xDeviceAbsCalibCtl *c = (xDeviceAbsCalibCtl *) control;
 	EloPrivatePtr priv = (EloPrivatePtr) (local->private);
 
 	priv->min_x = c->min_x;
