@@ -204,7 +204,9 @@ SetupProc(	pointer module,
 	local->private_flags = 0;
 	local->history_size = xf86SetIntOption( merged, "HistorySize", 0 );
 
+#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) == 0
 	xf86AddLocalDevice (local, merged);
+#endif
 
 	/* prepare to process touch packets */
 	EloNewPacket (priv);
@@ -488,11 +490,13 @@ SwitchMode(	ClientPtr client,
 		priv->reporting_mode = mode;
 		return (Success);
 	}
+#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) == 0
 	else if ((mode == SendCoreEvents) || (mode == DontSendCoreEvents))
 	{
 		xf86XInputSetSendCoreEvents (local, (mode == SendCoreEvents));
 		return (Success);
 	}
+#endif
 	else
 		return (!Success);
 }
