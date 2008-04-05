@@ -54,6 +54,8 @@
 #include "config.h"
 #endif
 
+#include <errno.h>
+
 #define _elo_C_
 /*****************************************************************************
  *	Standard Headers
@@ -159,7 +161,7 @@ SetupProc(	pointer module,
 	{
 		xf86ErrorF ("ELO 2300 driver unable to open device\n");
 		*errmaj = LDR_NOPORTOPEN;
-		*errmin = xf86GetErrno ();
+		*errmin = errno;
 		goto SetupProc_fail;
 	}
 	xf86ErrorFVerb( 6, "tty port opened successfully\n" );
