@@ -1,3 +1,5 @@
+.deps
+.libs
 ChangeLog
 Makefile
 Makefile.in
@@ -19,3 +21,5 @@ ltmain.sh
 missing
 stamp-h1
 *~
+xf86-input-elo2300-*.tar.*
+tags
